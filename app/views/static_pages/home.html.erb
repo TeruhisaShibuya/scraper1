@@ -1,0 +1,21 @@
+<h1>StaticPages#homeルート画面</h1>
+
+<p>
+<%= link_to 'スクレイピング実行', pages_path , :method => :create  %>
+</p>
+
+
+<div class= "container" >
+  <div class= "row">
+    <div class= "col-xl-4">
+      <%= @update.each do |f| %>    
+      <br>
+        <%= link_to img src= f.image,  "f.image_url"  %>
+      </br>
+      <br>
+        <%= link_to f.image_url, f.image_url  %>    
+      </br>
+      <% end %>
+    <div/>
+  <div/>
+<div/>

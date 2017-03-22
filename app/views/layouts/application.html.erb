@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scraper1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/header' %>      <!--フォルダ名/ファイル名-->
+  <div class "container">
+<%= yield %>       <!--ここにerbファイルが埋め込まれる-->
+  </div>
+</body>
+</html>
