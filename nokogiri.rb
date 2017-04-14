@@ -14,31 +14,34 @@
 #}
 
     #スクレイピング先URL
-    url = 'https://www.sigrun-woehr.com/en/New-Arrivals/'
+    url = 'https://www.sigrun-woehr.com/en/Bags-Accessoires/'
     
     charset = nil
     html = open(url) do |f|
      charset = f.charset   #文字種別を取得
      f.read   #htmlを読み込んで変数htmlに渡す
     end 
+    
+    doc = Nokogiri::HTML.parse(html, nil, charset)
   
     #nokogiri先のURLを指定してパース doc内に格納
-    doc = Nokogiri::HTML.parse(html, nil, charset)
-    
-      # <a> タグの中の <img>の値のみを返す リンク先の文字を返す！！
-      doc.css('a').css('img').each do |f|  
-      
-        # img_urlの定義とfの定義 fはソースに起因する。そしてその値を返せ
-        image = f.attribute('src').value
-        
-          #img_urlを表示しろ！！
-          puts image
+    doc.css('a').css('img').each do |src| #なかにimgが入っているaタグをみっけたらループに入る
+              newin_image = src.attribute('src').value
+              newin_url = src.parent.attribute('href').value
+              
+              puts 'ここから'
+              puts '画像の文字列'
+              puts newin_image
+              puts 'と'
+              puts 'リンク先'
+              puts newin_url
+              puts '---------'
       end
       
        #newはhashで渡す…２つのカラムに保存する場合ははコンマ区切る
             #@image = Items.new(:image_url => image_url, :image => image_url) 
-            @image = Item.new(:image => image) 
-            @image.save
+           # @image = Item.new(:image => image) 
+            #@image.save
     
      
       

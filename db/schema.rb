@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20170319115416) do
 
   create_table "items", force: true do |t|
-    t.string   "image_url"
+    t.string   "link_url"
     t.string   "image"
     t.string   "brand"
     t.datetime "created_at"
