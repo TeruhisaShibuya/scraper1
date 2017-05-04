@@ -1,8 +1,10 @@
 Scraper1::Application.routes.draw do
-  get "pages/new"
+  get "sites/new"
   get "static_pages/home"
   root to: 'static_pages#home'
-  resources :pages
+  resources :sites
+  resources :items
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.
@@ -18,6 +20,7 @@ Scraper1::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+  
   #   resources :products
 
   # Example resource route with options:

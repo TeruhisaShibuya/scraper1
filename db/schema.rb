@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319115416) do
+ActiveRecord::Schema.define(version: 20170423074058) do
 
   create_table "items", force: true do |t|
     t.string   "link_url"
-    t.string   "image"
-    t.string   "brand"
+    t.string   "image_url"
+    t.string   "brands"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
-    t.string   "url"
+  create_table "sites", force: true do |t|
     t.string   "name"
-    t.string   "is_insta"
+    t.string   "url"
+    t.string   "crawl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

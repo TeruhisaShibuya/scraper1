@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  url: MyString
   name: MyString
-  is_insta: false
+  url: MyString
 
 two:
-  url: MyString
   name: MyString
-  is_insta: false
+  url: MyString

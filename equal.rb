@@ -3,7 +3,6 @@
 #equalメソッドで比較する
 #比較結果がfalseの部分はホーム画面に表示する
 
-
  
   #1日前のクローリング結果
   @past_crawl = Items.where(created_at: 1.day.ago.all_day) #ハッシュ指定 これで昨日のクローリングのデータ全てを配列形式で取得??

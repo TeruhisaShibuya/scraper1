@@ -1,11 +1,19 @@
-old_crawl = Item.pluck(:created_at => "yesterday")
+yesterday = Item.find(:created_at => "yesterday 2014-4-14")   #Newモデルを読み込めていないようですよ！ 
+today     = Item.find(:created_at => "today 2014-4-15")       #そしてpluckで複数カラムを引っ張るか  link_urlとcreated_at
 
-puts = old_crawl
+@updates = []    #空配列 <- 配列だよ！
+
+today.each do |f|
+  if f.much(yesterday) 
+    puts = "同一アイテム" 
+    unless
+    puts = "最新アイテムの入荷がありました"
+    @updates[] = todays_url 
+  end
+end
 
 
 =begin
-new_crawl = Item.pluck(:created_at => today)
-
 old : 配列？←Item.find(日付)的な？で複数でてくるやーつ
 1: img1, link1, brand1
 2: img2, link2, brand2
@@ -15,11 +23,14 @@ new : 配列？
 1: img3, link3, brand3
 2: img2, link2, brand2
 3: ...
+=end
 
-@updates = 空配列 <- 配列だよ！
 
 
-new.each do |new_1行ずつ|
+
+
+
+new_crawl.each do |new_1行ずつ|
     if(matchできた){
         @updatesに行追加
     }
@@ -49,4 +60,3 @@ if 今日の画像カラム か link_urlカラム の値が
     データベースの中のbrands配列と比較。一致するならnew_oneとする
     
     @update = new_one
-=end

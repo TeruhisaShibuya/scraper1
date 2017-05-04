@@ -1,12 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "MYSCRAPER", '#', id: "logo" %>
+    <%= link_to "MYSCRAPER", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "トップページ",   'static_pages/home' %></li>
+        <li><%= link_to "トップページ", root_path %></li>
         <li><%= link_to "instagram更新情報",   '#' %></li>
-        <li><%= link_to "URL登録画面", 'pages/new' %></li>
-        <li><%= link_to "スクレイプページ一覧", '#' %></li>
+        <li><%= link_to "URL登録画面", sites_new_path  %></li>　　
+        <li><%= link_to "スクレイプページページ一覧", '#' %></li>
       </ul>
     </nav>
   </div>

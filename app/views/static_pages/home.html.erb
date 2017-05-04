@@ -1,21 +1,14 @@
 <h1>StaticPages#homeルート画面</h1>
 
 <p>
-<%= link_to 'スクレイピング実行', pages_path , :method => :create  %>
+<%= link_to 'スクレイピング実行', "#"  %>
 </p>
 
 
-<div class= "container" >
-  <div class= "row">
-    <div class= "col-xl-4">
-      <%= @update.each do |f| %>    
-      <br>
-        <%= link_to img src= f.image,  "f.image_url"  %>
-      </br>
-      <br>
-        <%= link_to f.image_url, f.image_url  %>    
-      </br>
-      <% end %>
-    </div>
-  </div>
-</div>
+<p>
+  <%= link_to 'アップデートを走らせる', items_path, :method => :update  %>
+</p>
+
+<p>
+  <%= link_to 'nokogiri実行!!', :controller => "items", :action => "new"  %>
+</p>
