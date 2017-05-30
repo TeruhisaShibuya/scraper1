@@ -3,6 +3,9 @@ class StaticPagesController < ApplicationController
   def new
   end
   
+  def index
+  end
+  
 end
 
 =begin

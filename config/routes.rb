@@ -1,9 +1,12 @@
 Scraper1::Application.routes.draw do
+  devise_for :users
   get "sites/new"
   get "static_pages/home"
   root to: 'static_pages#home'
   resources :sites
+  get "items/compare"
   resources :items
+  
   
   
   

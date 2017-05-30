@@ -1,5 +1,26 @@
 class ItemsController < ApplicationController
     
+    def compare
+      yesterday = Item.find(:created_at => "yesterday")   #Newモデルを読み込めていないようですよ！ 
+      puts yesterday
+      today     = Item.find(:created_at => "today" )       #そしてpluckで複数カラムを引っ張るか  link_urlとcreated_at
+      
+      yester_link = yesterday.pluck(:link_url)
+      today_link  = today.pluck(:link_url)
+       
+       
+      today_link.each do |e_today_link| 
+        if e_today_link.include(yester_link)
+          puts "変化なし"
+        else
+          puts "新作です"
+          @update = today_link
+        end
+      end
+    end
+    
+    
+    
     def new
       require 'open-uri'  
       require 'nokogiri'  
@@ -16,7 +37,7 @@ class ItemsController < ApplicationController
             doc = Nokogiri::HTML.parse(html, nil, charset) 
             @doc = doc
            
-            #docは恐らく配列オブジェクトなのでeachで回す
+            #docは配列オブジェクトなのでeachで回す
             doc.css('.' + site_crawl).each do |y|
              # puts y
               y.css('a').css('img').each do |z|

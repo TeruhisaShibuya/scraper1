@@ -28,6 +28,7 @@ GEM
     arel (4.0.2)
     autoprefixer-rails (6.7.7.2)
       execjs
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5)
@@ -44,6 +45,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     debug_inspector (0.0.2)
+    devise (3.5.10)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
     hike (1.2.3)
@@ -65,6 +73,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    orm_adapter (0.5.0)
     pg (0.20.0)
     polyglot (0.3.5)
     pry (0.10.4)
@@ -100,6 +109,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -132,6 +143,8 @@ GEM
     tzinfo (0.3.53)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
     yard (0.9.8)
 
 PLATFORMS
@@ -140,6 +153,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  devise
   jbuilder (~> 1.2)
   jquery-rails
   nokogiri
